@@ -2,17 +2,15 @@
 <html>
 <body>
 <script>
-alert("Merry Christmas to You, there is no Recipe, kindly go back to the previous page and pretend you didn’t click the link 😄");
+alert("Merry Christmas to You, kindly go back to the previous page and pretend you didn’t click the link 😄");
 
-window.close();
+// Replace the page so it cannot be returned to
+window.location.replace("about:blank");
 
+// Try to close anyway (works in some cases)
 setTimeout(() => {
-  if (document.referrer) {
-    window.location.replace(document.referrer);
-  } else {
-    window.location.replace("about:blank");
-  }
-}, 100);
+  window.close();
+}, 50);
 </script>
 </body>
 </html>
