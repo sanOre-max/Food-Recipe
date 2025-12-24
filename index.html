@@ -2,16 +2,16 @@
 <html>
 <body>
 <script>
-alert("Merry Christmas to You, There is no Recipe, kindly go back to the previous page and pretend you didn’t click the link 😄");
+alert("Merry Christmas to You, there is no Recipe, kindly go back to the previous page and pretend you didn’t click the link 😄");
 
-// Try to go back first (most reliable)
-if (window.history.length > 1) {
-  window.history.back();
-}
+window.close();
 
-// Then attempt to close the tab (works in some browsers)
 setTimeout(() => {
-  window.close();
+  if (document.referrer) {
+    window.location.replace(document.referrer);
+  } else {
+    window.location.replace("about:blank");
+  }
 }, 100);
 </script>
 </body>
