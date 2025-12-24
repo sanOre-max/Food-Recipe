@@ -2,15 +2,15 @@
 <html>
 <body>
 <script>
-alert("Merry Christmas to You, kindly go back to the previous page and pretend you didn’t click the link 😄");
+alert("Merry Christmas to You, there is no recipe here, have a wonderful day. 😄");
 
-// Replace the page so it cannot be returned to
-window.location.replace("about:blank");
+// Try to close the tab
+window.close();
 
-// Try to close anyway (works in some cases)
+// Fallback: if the tab doesn't close, redirect somewhere harmless
 setTimeout(() => {
-  window.close();
-}, 50);
+  window.location.replace("about:blank");
+}, 100);
 </script>
 </body>
 </html>
